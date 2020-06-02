@@ -1,0 +1,7 @@
+{
+  "name": "vk-rate-host-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
