@@ -1,13 +1,13 @@
-import { IonButton, IonButtons, IonContent, IonFab, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonPage, IonSpinner, IonTitle, IonToolbar, IonFabButton, IonNote, IonAvatar, IonSegment, IonSegmentButton } from "@ionic/react";
+import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonNote, IonPage, IonSegment, IonSegmentButton, IonTitle, IonToolbar } from "@ionic/react";
 import { informationCircleOutline, star } from "ionicons/icons";
 import React, { useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
 import useServerRequest from "../hooks/useServerRequest";
+import { setActiveDialog } from "../redux/globals/actions";
 import { setHostsRatingList } from "../redux/hosts/actions";
 import { AppState } from "../redux/types";
-import { setActiveDialog } from "../redux/globals/actions";
 
 let RatingPage: React.FC = () => {
     let dispatch = useDispatch();
@@ -27,7 +27,7 @@ let RatingPage: React.FC = () => {
             confirmText: "дат",
             title: "DELETE?"
         }))
-    }, []);
+    }, [dispatch]);
     let loadRating = useCallback(async () => {
         let response = await makeRequest("app.GetRatingList", {});
         if ("error" in response) return;
@@ -38,7 +38,7 @@ let RatingPage: React.FC = () => {
         if (!ratingLastUpdate || (Date.now() - ratingLastUpdate) / 1000 / 60 / 60 / 24 >= 1) {
             loadRating();
         }
-    }, []);
+    }, [loadRating, ratingLastUpdate]);
 
     return <IonPage>
         <IonHeader translucent>

@@ -1,11 +1,12 @@
-import { IonPage, IonHeader, IonToolbar, IonContent, IonTitle, IonLabel, IonButtons, IonBackButton, IonText } from '@ionic/react'
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react'
 import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useDispatch, useSelector } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
-import { useSelector, useDispatch } from 'react-redux';
-import { AppState } from '../redux/types';
+
 import useServerRequest from '../hooks/useServerRequest';
 import { setDetailedHostData } from '../redux/hosts/actions';
+import { AppState } from '../redux/types';
 
 interface Props extends RouteComponentProps<{
     rating_index: string
@@ -40,7 +41,7 @@ const HostInfo: React.FC<Props> = ({ match }) => {
         return () => {
             abortController.abort();
         }
-    }, [makeRequest, rating_index, selHostDetailedData, selHostInfoFromRank.host_id]);
+    }, [makeRequest, rating_index, selHostDetailedData, selHostInfoFromRank.host_id, dispatch]);
 
     return (
         <IonPage>

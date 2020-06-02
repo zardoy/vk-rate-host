@@ -1,16 +1,14 @@
-import React, { useCallback } from "react";
 import { IonAlert, IonLoading } from "@ionic/react";
-import { useTranslation } from "react-i18next";
+import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { AppState } from "../redux/types";
 import { setActiveDialog } from "../redux/globals/actions";
+import { AppState } from "../redux/types";
 
 interface Props {
 }
 
 let GlobalDialogs: React.FC<Props> = () => {
-    let { t } = useTranslation();
     let dispatch = useDispatch();
     let hideDialog = useCallback(() => {
         dispatch(setActiveDialog(null));
