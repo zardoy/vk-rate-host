@@ -1,5 +1,5 @@
 import { IonApp, IonRouterOutlet } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
+import { IonReactHashRouter } from '@ionic/react-router';
 import React, { Suspense, useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Redirect, Route } from 'react-router-dom';
@@ -33,14 +33,14 @@ const App: React.FC = () => {
     return <IonApp>
         <Suspense fallback={<AppLoadingPage />}>
             <GlobalModals />
-            <IonReactRouter>
+            <IonReactHashRouter>
                 <IonRouterOutlet>
                     <Route path="/rating" component={RatingPage} exact />
                     <Route path="/host/:rating_index" component={HostInfoPage} exact />
                     <Route path="/reloadapp" render={() => <ReloadAppPage callback={loadApp} />} exact />
                     <Redirect from="/" to="/rating" />
                 </IonRouterOutlet>
-            </IonReactRouter>
+            </IonReactHashRouter>
         </Suspense>
     </IonApp>;
 };
