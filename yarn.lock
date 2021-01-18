@@ -7138,10 +7138,10 @@ invert-kv@^2.0.0:
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-2.0.0.tgz#7393f5afa59ec9ff5f67a27620d11c226e3eec02"
   integrity sha512-wPVv/y/QQ/Uiirj/vh3oP+1Ww+AWehmi1g5fFWGPF6IpCBCDVrhgHRMvrLfdYcwDh3QJbGXDW4JAuzxElLSqKA==
 
-ionicons@^5.0.0, ionicons@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/ionicons/-/ionicons-5.0.1.tgz#fb48475b042b04b3ed2ba9876800687917d4603d"
-  integrity sha512-P9GHr7pgCJcG211W0wute49NZ9AvJZvFJf4OwYybakjX6j7tu0q5t5HNWn9bcb9YjI7SxBblJg8iqQ1Yb59DXw==
+ionicons@^5.0.1, ionicons@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/ionicons/-/ionicons-5.3.0.tgz#06aeae29a1cedf4e0e17714104d51aef9675a7d8"
+  integrity sha512-HU8g9fnuoBF3GUBXq4GcWYoOZ6mjMRUL2X1s/QyPsbZjGRrwBcsK+I20kxdho+YDPBqa+BQM0h+gzh4H4c9P2A==
 
 ip-regex@^2.1.0:
   version "2.1.0"
